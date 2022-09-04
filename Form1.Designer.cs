@@ -48,6 +48,10 @@ namespace GameOfLife
             this.advanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startBtnClick = new System.Windows.Forms.ToolStripMenuItem();
             this.fdSave = new System.Windows.Forms.SaveFileDialog();
+            this.colorBtn = new System.Windows.Forms.Button();
+            this.pseBtn = new System.Windows.Forms.Button();
+            this.nxtBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cellSize)).BeginInit();
             this.mMain.SuspendLayout();
@@ -68,7 +72,7 @@ namespace GameOfLife
             // cellSize
             // 
             this.cellSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cellSize.Location = new System.Drawing.Point(72, 440);
+            this.cellSize.Location = new System.Drawing.Point(72, 439);
             this.cellSize.Maximum = new decimal(new int[] {
             20,
             0,
@@ -92,7 +96,7 @@ namespace GameOfLife
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 440);
+            this.label1.Location = new System.Drawing.Point(16, 441);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 2;
@@ -112,7 +116,7 @@ namespace GameOfLife
             // startBtn
             // 
             this.startBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.startBtn.Location = new System.Drawing.Point(714, 437);
+            this.startBtn.Location = new System.Drawing.Point(733, 441);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(64, 20);
             this.startBtn.TabIndex = 5;
@@ -195,34 +199,82 @@ namespace GameOfLife
             // resetGridClick
             // 
             this.resetGridClick.Name = "resetGridClick";
-            this.resetGridClick.Size = new System.Drawing.Size(180, 22);
+            this.resetGridClick.Size = new System.Drawing.Size(127, 22);
             this.resetGridClick.Text = "&Reset Grid";
             this.resetGridClick.Click += new System.EventHandler(this.resetGrid_tool);
             // 
             // clearGridClick
             // 
             this.clearGridClick.Name = "clearGridClick";
-            this.clearGridClick.Size = new System.Drawing.Size(180, 22);
+            this.clearGridClick.Size = new System.Drawing.Size(127, 22);
             this.clearGridClick.Text = "&Clear Grid";
             this.clearGridClick.Click += new System.EventHandler(this.clearGrid_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
+            // 
+            // advanceToolStripMenuItem
+            // 
+            this.advanceToolStripMenuItem.Name = "advanceToolStripMenuItem";
+            this.advanceToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             // 
             // startBtnClick
             // 
             this.startBtnClick.Name = "startBtnClick";
-            this.startBtnClick.Size = new System.Drawing.Size(180, 22);
+            this.startBtnClick.Size = new System.Drawing.Size(127, 22);
             this.startBtnClick.Text = "&Start";
             this.startBtnClick.Click += new System.EventHandler(this.startTool_Click);
+            // 
+            // colorBtn
+            // 
+            this.colorBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.colorBtn.Location = new System.Drawing.Point(221, 466);
+            this.colorBtn.Name = "colorBtn";
+            this.colorBtn.Size = new System.Drawing.Size(64, 20);
+            this.colorBtn.TabIndex = 8;
+            this.colorBtn.Text = "Color";
+            this.colorBtn.UseVisualStyleBackColor = true;
+            // 
+            // pseBtn
+            // 
+            this.pseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pseBtn.Location = new System.Drawing.Point(144, 466);
+            this.pseBtn.Name = "pseBtn";
+            this.pseBtn.Size = new System.Drawing.Size(64, 20);
+            this.pseBtn.TabIndex = 9;
+            this.pseBtn.Text = "Pause";
+            this.pseBtn.UseVisualStyleBackColor = true;
+            // 
+            // nxtBtn
+            // 
+            this.nxtBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.nxtBtn.Location = new System.Drawing.Point(663, 441);
+            this.nxtBtn.Name = "nxtBtn";
+            this.nxtBtn.Size = new System.Drawing.Size(64, 20);
+            this.nxtBtn.TabIndex = 10;
+            this.nxtBtn.Text = "Next";
+            this.nxtBtn.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 466);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Alive Cell:";
             // 
             // TonioLife
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 504);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.nxtBtn);
+            this.Controls.Add(this.pseBtn);
+            this.Controls.Add(this.colorBtn);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.startBtn);
             this.Controls.Add(this.resetBtn);
@@ -266,6 +318,10 @@ namespace GameOfLife
         private System.Windows.Forms.ToolStripMenuItem savePatternClick;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem exitClick;
+        private System.Windows.Forms.Button colorBtn;
+        private System.Windows.Forms.Button pseBtn;
+        private System.Windows.Forms.Button nxtBtn;
+        private System.Windows.Forms.Label label2;
     }
 }
 
