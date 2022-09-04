@@ -15,15 +15,30 @@ namespace GameOfLife
 
         Boolean InProgress;
         Grid CellGrid;
+        Color cellColor = Color.Aqua;
 
         public TonioLife()
         {
             InitializeComponent();
         }
 
-        private void ConwayMain_Load(object sender, EventArgs e)
+        private void tonio_Load(object sender, EventArgs e)
         {
             createGrid(true);
+        }
+
+        public void activeCell()
+        {
+            int activeCell = 0;
+            foreach (Cell cell in Grid.gridCells)
+            {
+                if (cell.IsAlive)
+                {
+                    activeCell++;
+                }
+            }
+
+            this.label3.Text = activeCell.ToString();
         }
 
         private void createGrid(bool RandomCells)
@@ -49,6 +64,8 @@ namespace GameOfLife
                         newCell.IsAlive = false;
                 }
             }
+
+            activeCell();
 
             Grid.gridCells = Grid.gridCells.OrderBy(c => c.XPos).OrderBy(c => c.YPos).ToList();
 
@@ -79,7 +96,6 @@ namespace GameOfLife
             foreach (Cell cell in Grid.gridCells)
             {
                 int activeCount = CellGrid.LiveAdjacent(cell);
-
                 if (cell.IsAlive)
                 {
                     if ((activeCount < 2) || (activeCount > 3))
@@ -100,18 +116,35 @@ namespace GameOfLife
                 cell.IsAlive = cell.NextStatus;
             }
 
+
+            activeCell();
             updateGrid(CellGrid);
 
 
         }
 
+        public string colorChange()
+        {
+            string[] options = { "LightBlue", "DarkOrange", "White", "Red", "Aqua", "Brown", "Cyan", "DarkGray", "DarkGreen", "AliceBlue", "Beige", "Bisque", "Colal", "FireBrick", "Gold", "HotPink", "Indigo", "Ivory", "LightYellow", "Linen", "Magenta" };
+            string results = "";
+            Random rnd = new Random();
+            results = options[rnd.Next(0, options.Length)];
+            return results;
+        }
+        
+        public void changeColor(object sender, EventArgs e)
+        {
+            Color c = Color.FromName(colorChange());
+            cellColor = c;
+            updateGrid(CellGrid);
+        }
+
         private void updateGrid(Grid GridDisplay)
         {
             Random random = new Random();
-
             using (Bitmap bmp = new Bitmap(picGrid.Width, picGrid.Height))
             using (Graphics g = Graphics.FromImage(bmp))
-            using (SolidBrush cellBrush = new SolidBrush(Color.LightBlue))
+            using (SolidBrush cellBrush = new SolidBrush(cellColor))
             {
                 g.Clear(Color.Black);
 

@@ -1,4 +1,5 @@
 ﻿
+
 namespace GameOfLife
 {
     partial class TonioLife
@@ -52,6 +53,7 @@ namespace GameOfLife
             this.pseBtn = new System.Windows.Forms.Button();
             this.nxtBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cellSize)).BeginInit();
             this.mMain.SuspendLayout();
@@ -161,26 +163,26 @@ namespace GameOfLife
             // loadPatterClick
             // 
             this.loadPatterClick.Name = "loadPatterClick";
-            this.loadPatterClick.Size = new System.Drawing.Size(180, 22);
+            this.loadPatterClick.Size = new System.Drawing.Size(141, 22);
             this.loadPatterClick.Text = "&Load Pattern";
             this.loadPatterClick.Click += new System.EventHandler(this.loadPattern_Click);
             // 
             // savePatternClick
             // 
             this.savePatternClick.Name = "savePatternClick";
-            this.savePatternClick.Size = new System.Drawing.Size(180, 22);
+            this.savePatternClick.Size = new System.Drawing.Size(141, 22);
             this.savePatternClick.Text = "&Save Pattern";
             this.savePatternClick.Click += new System.EventHandler(this.savePattern_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(138, 6);
             // 
             // exitClick
             // 
             this.exitClick.Name = "exitClick";
-            this.exitClick.Size = new System.Drawing.Size(180, 22);
+            this.exitClick.Size = new System.Drawing.Size(141, 22);
             this.exitClick.Text = "E&xit";
             this.exitClick.Click += new System.EventHandler(this.exitTool_Click);
             // 
@@ -215,9 +217,9 @@ namespace GameOfLife
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
             // 
-            // advanceToolStripMenuItem
+            // advanceTool
             // 
-            this.advanceToolStripMenuItem.Name = "advanceToolStripMenuItem";
+            this.advanceToolStripMenuItem.Name = "advanceTool";
             this.advanceToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             // 
             // startBtnClick
@@ -236,6 +238,7 @@ namespace GameOfLife
             this.colorBtn.TabIndex = 8;
             this.colorBtn.Text = "Color";
             this.colorBtn.UseVisualStyleBackColor = true;
+            this.colorBtn.Click += new System.EventHandler(this.changeColor);
             // 
             // pseBtn
             // 
@@ -266,11 +269,20 @@ namespace GameOfLife
             this.label2.TabIndex = 11;
             this.label2.Text = "Alive Cell:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(76, 466);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(13, 13);
+            this.label3.TabIndex = 12;
+            // 
             // TonioLife
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 504);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nxtBtn);
             this.Controls.Add(this.pseBtn);
@@ -287,7 +299,7 @@ namespace GameOfLife
             this.Name = "TonioLife";
             this.Text = "Tonio\'s Game Of Life";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.tonio_Closing);
-            this.Load += new System.EventHandler(this.ConwayMain_Load);
+            this.Load += new System.EventHandler(this.tonio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cellSize)).EndInit();
             this.mMain.ResumeLayout(false);
@@ -322,6 +334,7 @@ namespace GameOfLife
         private System.Windows.Forms.Button pseBtn;
         private System.Windows.Forms.Button nxtBtn;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
