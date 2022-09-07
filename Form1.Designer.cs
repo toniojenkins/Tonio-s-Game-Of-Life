@@ -47,6 +47,25 @@ namespace GameOfLife
             this.clearGridClick = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.advanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundToolColor = new System.Windows.Forms.ToolStripMenuItem();
+            this.bckgrndRed = new System.Windows.Forms.ToolStripMenuItem();
+            this.bckgrndBlue = new System.Windows.Forms.ToolStripMenuItem();
+            this.bckgrndYellow = new System.Windows.Forms.ToolStripMenuItem();
+            this.bckgrndBrown = new System.Windows.Forms.ToolStripMenuItem();
+            this.bckgrndAqua = new System.Windows.Forms.ToolStripMenuItem();
+            this.bckgrndHotPink = new System.Windows.Forms.ToolStripMenuItem();
+            this.bckgrndDarkGreen = new System.Windows.Forms.ToolStripMenuItem();
+            this.bckgrndRandom = new System.Windows.Forms.ToolStripMenuItem();
+            this.cellToolColor = new System.Windows.Forms.ToolStripMenuItem();
+            this.cellColorRed = new System.Windows.Forms.ToolStripMenuItem();
+            this.cellColorBlue = new System.Windows.Forms.ToolStripMenuItem();
+            this.cellColorYellow = new System.Windows.Forms.ToolStripMenuItem();
+            this.cellColorBrown = new System.Windows.Forms.ToolStripMenuItem();
+            this.cellColorAqua = new System.Windows.Forms.ToolStripMenuItem();
+            this.cellColorHotPink = new System.Windows.Forms.ToolStripMenuItem();
+            this.cellColorDarkGreen = new System.Windows.Forms.ToolStripMenuItem();
+            this.cellColorRandom = new System.Windows.Forms.ToolStripMenuItem();
             this.startBtnClick = new System.Windows.Forms.ToolStripMenuItem();
             this.fdSave = new System.Windows.Forms.SaveFileDialog();
             this.colorBtn = new System.Windows.Forms.Button();
@@ -55,6 +74,7 @@ namespace GameOfLife
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.warBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cellSize)).BeginInit();
             this.mMain.SuspendLayout();
@@ -195,6 +215,7 @@ namespace GameOfLife
             this.clearGridClick,
             this.toolStripSeparator1,
             this.advanceToolStripMenuItem,
+            this.colorToolStripMenuItem,
             this.startBtnClick});
             this.gameClick.Name = "gameClick";
             this.gameClick.Size = new System.Drawing.Size(50, 20);
@@ -223,6 +244,143 @@ namespace GameOfLife
             // 
             this.advanceToolStripMenuItem.Name = "advanceToolStripMenuItem";
             this.advanceToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            // 
+            // colorToolStripMenuItem
+            // 
+            this.colorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backgroundToolColor,
+            this.cellToolColor});
+            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.colorToolStripMenuItem.Text = "Color";
+            // 
+            // backgroundToolColor
+            // 
+            this.backgroundToolColor.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bckgrndRed,
+            this.bckgrndBlue,
+            this.bckgrndYellow,
+            this.bckgrndBrown,
+            this.bckgrndAqua,
+            this.bckgrndHotPink,
+            this.bckgrndDarkGreen,
+            this.bckgrndRandom});
+            this.backgroundToolColor.Name = "backgroundToolColor";
+            this.backgroundToolColor.Size = new System.Drawing.Size(170, 22);
+            this.backgroundToolColor.Text = "Background Color";
+            // 
+            // bckgrndRed
+            // 
+            this.bckgrndRed.Name = "bckgrndRed";
+            this.bckgrndRed.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndRed.Text = "Red";
+            // 
+            // bckgrndBlue
+            // 
+            this.bckgrndBlue.Name = "bckgrndBlue";
+            this.bckgrndBlue.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndBlue.Text = "Blue";
+            // 
+            // bckgrndYellow
+            // 
+            this.bckgrndYellow.Name = "bckgrndYellow";
+            this.bckgrndYellow.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndYellow.Text = "Yellow";
+            // 
+            // bckgrndBrown
+            // 
+            this.bckgrndBrown.Name = "bckgrndBrown";
+            this.bckgrndBrown.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndBrown.Text = "Brown";
+            // 
+            // bckgrndAqua
+            // 
+            this.bckgrndAqua.Name = "bckgrndAqua";
+            this.bckgrndAqua.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndAqua.Text = "Aqua";
+            // 
+            // bckgrndHotPink
+            // 
+            this.bckgrndHotPink.Name = "bckgrndHotPink";
+            this.bckgrndHotPink.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndHotPink.Text = "HotPink";
+            // 
+            // bckgrndDarkGreen
+            // 
+            this.bckgrndDarkGreen.Name = "bckgrndDarkGreen";
+            this.bckgrndDarkGreen.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndDarkGreen.Text = "DarkGreen";
+            // 
+            // bckgrndRandom
+            // 
+            this.bckgrndRandom.Name = "bckgrndRandom";
+            this.bckgrndRandom.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndRandom.Text = "Random";
+            // 
+            // cellToolColor
+            // 
+            this.cellToolColor.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cellColorRed,
+            this.cellColorBlue,
+            this.cellColorYellow,
+            this.cellColorBrown,
+            this.cellColorAqua,
+            this.cellColorHotPink,
+            this.cellColorDarkGreen,
+            this.cellColorRandom});
+            this.cellToolColor.Name = "cellToolColor";
+            this.cellToolColor.Size = new System.Drawing.Size(170, 22);
+            this.cellToolColor.Text = "Cell Color";
+            // 
+            // cellColorRed
+            // 
+            this.cellColorRed.Name = "cellColorRed";
+            this.cellColorRed.Size = new System.Drawing.Size(129, 22);
+            this.cellColorRed.Text = "Red";
+            this.cellColorRed.Click += new System.EventHandler(this.menuColor);
+            // 
+            // cellColorBlue
+            // 
+            this.cellColorBlue.Name = "cellColorBlue";
+            this.cellColorBlue.Size = new System.Drawing.Size(129, 22);
+            this.cellColorBlue.Text = "Blue";
+            // 
+            // cellColorYellow
+            // 
+            this.cellColorYellow.Name = "cellColorYellow";
+            this.cellColorYellow.Size = new System.Drawing.Size(129, 22);
+            this.cellColorYellow.Text = "Yellow";
+            // 
+            // cellColorBrown
+            // 
+            this.cellColorBrown.Name = "cellColorBrown";
+            this.cellColorBrown.Size = new System.Drawing.Size(129, 22);
+            this.cellColorBrown.Text = "Brown";
+            // 
+            // cellColorAqua
+            // 
+            this.cellColorAqua.Name = "cellColorAqua";
+            this.cellColorAqua.Size = new System.Drawing.Size(129, 22);
+            this.cellColorAqua.Text = "Aqua";
+            // 
+            // cellColorHotPink
+            // 
+            this.cellColorHotPink.Name = "cellColorHotPink";
+            this.cellColorHotPink.Size = new System.Drawing.Size(129, 22);
+            this.cellColorHotPink.Text = "HotPink";
+            // 
+            // cellColorDarkGreen
+            // 
+            this.cellColorDarkGreen.Name = "cellColorDarkGreen";
+            this.cellColorDarkGreen.Size = new System.Drawing.Size(129, 22);
+            this.cellColorDarkGreen.Text = "DarkGreen";
+            // 
+            // cellColorRandom
+            // 
+            this.cellColorRandom.Name = "cellColorRandom";
+            this.cellColorRandom.Size = new System.Drawing.Size(129, 22);
+            this.cellColorRandom.Text = "Random";
+            this.cellColorRandom.Click += new System.EventHandler(this.changeColor);
             // 
             // startBtnClick
             // 
@@ -265,7 +423,7 @@ namespace GameOfLife
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(76, 466);
+            this.label3.Location = new System.Drawing.Point(76, 463);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 12;
@@ -273,7 +431,7 @@ namespace GameOfLife
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 482);
+            this.label4.Location = new System.Drawing.Point(13, 483);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 13;
@@ -282,16 +440,28 @@ namespace GameOfLife
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(83, 481);
+            this.label5.Location = new System.Drawing.Point(83, 483);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 14;
+            // 
+            // warBtn
+            // 
+            this.warBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.warBtn.Location = new System.Drawing.Point(142, 456);
+            this.warBtn.Name = "warBtn";
+            this.warBtn.Size = new System.Drawing.Size(64, 20);
+            this.warBtn.TabIndex = 15;
+            this.warBtn.Text = "War";
+            this.warBtn.UseVisualStyleBackColor = true;
+            this.warBtn.Click += new System.EventHandler(this.War);
             // 
             // TonioLife
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 504);
+            this.Controls.Add(this.warBtn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -347,6 +517,26 @@ namespace GameOfLife
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cellToolColor;
+        private System.Windows.Forms.ToolStripMenuItem cellColorRed;
+        private System.Windows.Forms.ToolStripMenuItem cellColorBlue;
+        private System.Windows.Forms.ToolStripMenuItem cellColorYellow;
+        private System.Windows.Forms.ToolStripMenuItem cellColorBrown;
+        private System.Windows.Forms.ToolStripMenuItem cellColorAqua;
+        private System.Windows.Forms.ToolStripMenuItem cellColorHotPink;
+        private System.Windows.Forms.ToolStripMenuItem cellColorDarkGreen;
+        private System.Windows.Forms.ToolStripMenuItem cellColorRandom;
+        private System.Windows.Forms.ToolStripMenuItem backgroundToolColor;
+        private System.Windows.Forms.ToolStripMenuItem bckgrndRed;
+        private System.Windows.Forms.ToolStripMenuItem bckgrndBlue;
+        private System.Windows.Forms.ToolStripMenuItem bckgrndYellow;
+        private System.Windows.Forms.ToolStripMenuItem bckgrndBrown;
+        private System.Windows.Forms.ToolStripMenuItem bckgrndAqua;
+        private System.Windows.Forms.ToolStripMenuItem bckgrndHotPink;
+        private System.Windows.Forms.ToolStripMenuItem bckgrndDarkGreen;
+        private System.Windows.Forms.ToolStripMenuItem bckgrndRandom;
+        private System.Windows.Forms.Button warBtn;
     }
 }
 

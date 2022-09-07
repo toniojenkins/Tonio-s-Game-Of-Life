@@ -12,13 +12,11 @@ namespace GameOfLife
 {
     public partial class TonioLife : Form
     {
-        // public variables
-        Boolean InProgress;
-        Grid CellGrid;
-
         // private variables
+        private Boolean InProgress;
+        private Grid CellGrid;
         private Color cellColor = Color.Aqua;
-        int currentGen = 0;
+        private int currentGen = 0;
 
         public TonioLife()
         {
@@ -78,7 +76,7 @@ namespace GameOfLife
             }
 
             activeCell();
-
+            updateGen();
             Grid.gridCells = Grid.gridCells.OrderBy(c => c.XPos).OrderBy(c => c.YPos).ToList();
             
             updateGrid(CellGrid);
@@ -141,7 +139,14 @@ namespace GameOfLife
             string results = "";
             Random rnd = new Random();
             results = options[rnd.Next(0, options.Length)];
+
             return results;
+        }
+        
+        public void menuColor(object sender, EventArgs e)
+        {
+            cellColor = Color.Red;
+            updateGrid(CellGrid);
         }
         
         public void changeColor(object sender, EventArgs e)
@@ -297,5 +302,15 @@ namespace GameOfLife
             }
 
         }
+
+
+        public void War(object sender, EventArgs e)
+        {
+            // thoughts?
+            // different sections of cells have different colors
+            // when 2 oppisite section of cells beomce neighbors
+            // the cell with the most neighbors will keep color, the remaining will change to the color of the cell with the most neighbors
+            
+        }    
     }
 }
