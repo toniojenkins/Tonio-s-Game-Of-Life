@@ -12,10 +12,13 @@ namespace GameOfLife
 {
     public partial class TonioLife : Form
     {
-
+        // public variables
         Boolean InProgress;
         Grid CellGrid;
-        Color cellColor = Color.Aqua;
+
+        // private variables
+        private Color cellColor = Color.Aqua;
+        int currentGen = 0;
 
         public TonioLife()
         {
@@ -40,7 +43,16 @@ namespace GameOfLife
 
             this.label3.Text = activeCell.ToString();
         }
+        public void updateGen()
+        {
+            this.label5.Text = currentGen.ToString();
+        }
 
+        public void resetGen()
+        {
+            currentGen = 0;
+            updateGen();
+        }
         private void createGrid(bool RandomCells)
         {
             Cell newCell;
@@ -68,7 +80,7 @@ namespace GameOfLife
             activeCell();
 
             Grid.gridCells = Grid.gridCells.OrderBy(c => c.XPos).OrderBy(c => c.YPos).ToList();
-
+            
             updateGrid(CellGrid);
 
         }
@@ -76,6 +88,7 @@ namespace GameOfLife
         private void btnReset_Click(object sender, EventArgs e)
         {
             createGrid(true);
+            resetGen();
         }
 
         private void getNextUpdate()
@@ -116,11 +129,10 @@ namespace GameOfLife
                 cell.IsAlive = cell.NextStatus;
             }
 
-
+            currentGen++;
             activeCell();
             updateGrid(CellGrid);
-
-
+            updateGen();
         }
 
         public string colorChange()
@@ -211,17 +223,20 @@ namespace GameOfLife
         private void clear_btnClick(object sender, EventArgs e)
         {
             createGrid(false);
+            resetGen();
         }
 
         private void resetGrid_tool(object sender, EventArgs e)
         {
             createGrid(true);
+            resetGen();
 
         }
 
         private void clearGrid_Click(object sender, EventArgs e)
         {
             createGrid(false);
+            resetGen();
 
         }
 

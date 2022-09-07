@@ -53,6 +53,8 @@ namespace GameOfLife
             this.nxtBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cellSize)).BeginInit();
             this.mMain.SuspendLayout();
@@ -73,7 +75,7 @@ namespace GameOfLife
             // cellSize
             // 
             this.cellSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cellSize.Location = new System.Drawing.Point(72, 439);
+            this.cellSize.Location = new System.Drawing.Point(72, 435);
             this.cellSize.Maximum = new decimal(new int[] {
             20,
             0,
@@ -85,8 +87,9 @@ namespace GameOfLife
             0,
             0});
             this.cellSize.Name = "cellSize";
-            this.cellSize.Size = new System.Drawing.Size(51, 20);
+            this.cellSize.Size = new System.Drawing.Size(48, 20);
             this.cellSize.TabIndex = 1;
+            this.cellSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cellSize.Value = new decimal(new int[] {
             9,
             0,
@@ -97,7 +100,7 @@ namespace GameOfLife
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 441);
+            this.label1.Location = new System.Drawing.Point(12, 437);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 2;
@@ -106,7 +109,7 @@ namespace GameOfLife
             // resetBtn
             // 
             this.resetBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.resetBtn.Location = new System.Drawing.Point(144, 437);
+            this.resetBtn.Location = new System.Drawing.Point(142, 433);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(64, 20);
             this.resetBtn.TabIndex = 3;
@@ -128,7 +131,7 @@ namespace GameOfLife
             // clearBtn
             // 
             this.clearBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.clearBtn.Location = new System.Drawing.Point(221, 437);
+            this.clearBtn.Location = new System.Drawing.Point(221, 433);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(64, 20);
             this.clearBtn.TabIndex = 6;
@@ -231,7 +234,7 @@ namespace GameOfLife
             // colorBtn
             // 
             this.colorBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.colorBtn.Location = new System.Drawing.Point(221, 466);
+            this.colorBtn.Location = new System.Drawing.Point(221, 459);
             this.colorBtn.Name = "colorBtn";
             this.colorBtn.Size = new System.Drawing.Size(64, 20);
             this.colorBtn.TabIndex = 8;
@@ -253,7 +256,7 @@ namespace GameOfLife
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 466);
+            this.label2.Location = new System.Drawing.Point(13, 463);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 11;
@@ -267,11 +270,30 @@ namespace GameOfLife
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 12;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 482);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Generation:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(83, 481);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 14;
+            // 
             // TonioLife
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 504);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nxtBtn);
@@ -323,6 +345,8 @@ namespace GameOfLife
         private System.Windows.Forms.Button nxtBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 
