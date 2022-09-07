@@ -78,7 +78,7 @@ namespace GameOfLife
             createGrid(true);
         }
 
-        private void GetNextState()
+        private void getNextUpdate()
         {
             //Method to calculate next positions of cells and update the grid.
             /*
@@ -162,6 +162,10 @@ namespace GameOfLife
                 picGrid.Image = (Bitmap)bmp.Clone();
             }
         }
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            getNextUpdate();
+        }
 
         private void startBtn_Click(object sender, EventArgs e)
         {
@@ -177,7 +181,7 @@ namespace GameOfLife
 
             while (InProgress)
             {
-                GetNextState();
+                getNextUpdate();
                 Application.DoEvents();
             }
         }

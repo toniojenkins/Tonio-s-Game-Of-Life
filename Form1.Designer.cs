@@ -50,7 +50,6 @@ namespace GameOfLife
             this.startBtnClick = new System.Windows.Forms.ToolStripMenuItem();
             this.fdSave = new System.Windows.Forms.SaveFileDialog();
             this.colorBtn = new System.Windows.Forms.Button();
-            this.pseBtn = new System.Windows.Forms.Button();
             this.nxtBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -89,7 +88,7 @@ namespace GameOfLife
             this.cellSize.Size = new System.Drawing.Size(51, 20);
             this.cellSize.TabIndex = 1;
             this.cellSize.Value = new decimal(new int[] {
-            7,
+            9,
             0,
             0,
             0});
@@ -217,9 +216,9 @@ namespace GameOfLife
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
             // 
-            // advanceTool
+            // advanceToolStripMenuItem
             // 
-            this.advanceToolStripMenuItem.Name = "advanceTool";
+            this.advanceToolStripMenuItem.Name = "advanceToolStripMenuItem";
             this.advanceToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             // 
             // startBtnClick
@@ -240,16 +239,6 @@ namespace GameOfLife
             this.colorBtn.UseVisualStyleBackColor = true;
             this.colorBtn.Click += new System.EventHandler(this.changeColor);
             // 
-            // pseBtn
-            // 
-            this.pseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pseBtn.Location = new System.Drawing.Point(144, 466);
-            this.pseBtn.Name = "pseBtn";
-            this.pseBtn.Size = new System.Drawing.Size(64, 20);
-            this.pseBtn.TabIndex = 9;
-            this.pseBtn.Text = "Pause";
-            this.pseBtn.UseVisualStyleBackColor = true;
-            // 
             // nxtBtn
             // 
             this.nxtBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -259,6 +248,7 @@ namespace GameOfLife
             this.nxtBtn.TabIndex = 10;
             this.nxtBtn.Text = "Next";
             this.nxtBtn.UseVisualStyleBackColor = true;
+            this.nxtBtn.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // label2
             // 
@@ -274,7 +264,7 @@ namespace GameOfLife
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(76, 466);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 13);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 12;
             // 
             // TonioLife
@@ -285,7 +275,6 @@ namespace GameOfLife
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nxtBtn);
-            this.Controls.Add(this.pseBtn);
             this.Controls.Add(this.colorBtn);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.startBtn);
@@ -331,7 +320,6 @@ namespace GameOfLife
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem exitClick;
         private System.Windows.Forms.Button colorBtn;
-        private System.Windows.Forms.Button pseBtn;
         private System.Windows.Forms.Button nxtBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
