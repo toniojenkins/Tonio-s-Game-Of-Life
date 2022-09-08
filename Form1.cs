@@ -145,7 +145,41 @@ namespace GameOfLife
         
         public void menuColor(object sender, EventArgs e)
         {
-            cellColor = Color.Red;
+            Color c = cellColor;
+            string color = sender.ToString();
+            switch (color)
+            {
+                case "Red":
+                    c = Color.FromName(color);
+                    cellColor = c;
+
+                    break;
+                case "Yellow":
+                    c = Color.FromName(color);
+                    cellColor = c;
+                    break;
+                case "Aqua":
+                    c = Color.FromName(color);
+                    cellColor = c;
+                    break;
+                case "Brown":
+                    c = Color.FromName(color);
+                    cellColor = c;
+                    break;
+                case "DarkGreen":
+                    c = Color.FromName(color);
+                    cellColor = c;
+                    break;
+                case "HotPink":
+                    c = Color.FromName(color);
+                    cellColor = c;
+                    break;
+                case "Blue":
+                    c = Color.FromName(color);
+                    cellColor = c;
+                    break;
+            }
+
             updateGrid(CellGrid);
         }
         

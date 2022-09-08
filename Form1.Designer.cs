@@ -224,26 +224,26 @@ namespace GameOfLife
             // resetGridClick
             // 
             this.resetGridClick.Name = "resetGridClick";
-            this.resetGridClick.Size = new System.Drawing.Size(127, 22);
+            this.resetGridClick.Size = new System.Drawing.Size(180, 22);
             this.resetGridClick.Text = "&Reset Grid";
             this.resetGridClick.Click += new System.EventHandler(this.resetGrid_tool);
             // 
             // clearGridClick
             // 
             this.clearGridClick.Name = "clearGridClick";
-            this.clearGridClick.Size = new System.Drawing.Size(127, 22);
+            this.clearGridClick.Size = new System.Drawing.Size(180, 22);
             this.clearGridClick.Text = "&Clear Grid";
             this.clearGridClick.Click += new System.EventHandler(this.clearGrid_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // advanceToolStripMenuItem
             // 
             this.advanceToolStripMenuItem.Name = "advanceToolStripMenuItem";
-            this.advanceToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.advanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             // 
             // colorToolStripMenuItem
             // 
@@ -251,7 +251,7 @@ namespace GameOfLife
             this.backgroundToolColor,
             this.cellToolColor});
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.colorToolStripMenuItem.Text = "Color";
             // 
             // backgroundToolColor
@@ -266,55 +266,55 @@ namespace GameOfLife
             this.bckgrndDarkGreen,
             this.bckgrndRandom});
             this.backgroundToolColor.Name = "backgroundToolColor";
-            this.backgroundToolColor.Size = new System.Drawing.Size(170, 22);
+            this.backgroundToolColor.Size = new System.Drawing.Size(180, 22);
             this.backgroundToolColor.Text = "Background Color";
             // 
             // bckgrndRed
             // 
             this.bckgrndRed.Name = "bckgrndRed";
-            this.bckgrndRed.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndRed.Size = new System.Drawing.Size(180, 22);
             this.bckgrndRed.Text = "Red";
             // 
             // bckgrndBlue
             // 
             this.bckgrndBlue.Name = "bckgrndBlue";
-            this.bckgrndBlue.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndBlue.Size = new System.Drawing.Size(180, 22);
             this.bckgrndBlue.Text = "Blue";
             // 
             // bckgrndYellow
             // 
             this.bckgrndYellow.Name = "bckgrndYellow";
-            this.bckgrndYellow.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndYellow.Size = new System.Drawing.Size(180, 22);
             this.bckgrndYellow.Text = "Yellow";
             // 
             // bckgrndBrown
             // 
             this.bckgrndBrown.Name = "bckgrndBrown";
-            this.bckgrndBrown.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndBrown.Size = new System.Drawing.Size(180, 22);
             this.bckgrndBrown.Text = "Brown";
             // 
             // bckgrndAqua
             // 
             this.bckgrndAqua.Name = "bckgrndAqua";
-            this.bckgrndAqua.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndAqua.Size = new System.Drawing.Size(180, 22);
             this.bckgrndAqua.Text = "Aqua";
             // 
             // bckgrndHotPink
             // 
             this.bckgrndHotPink.Name = "bckgrndHotPink";
-            this.bckgrndHotPink.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndHotPink.Size = new System.Drawing.Size(180, 22);
             this.bckgrndHotPink.Text = "HotPink";
             // 
             // bckgrndDarkGreen
             // 
             this.bckgrndDarkGreen.Name = "bckgrndDarkGreen";
-            this.bckgrndDarkGreen.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndDarkGreen.Size = new System.Drawing.Size(180, 22);
             this.bckgrndDarkGreen.Text = "DarkGreen";
             // 
             // bckgrndRandom
             // 
             this.bckgrndRandom.Name = "bckgrndRandom";
-            this.bckgrndRandom.Size = new System.Drawing.Size(129, 22);
+            this.bckgrndRandom.Size = new System.Drawing.Size(180, 22);
             this.bckgrndRandom.Text = "Random";
             // 
             // cellToolColor
@@ -329,63 +329,69 @@ namespace GameOfLife
             this.cellColorDarkGreen,
             this.cellColorRandom});
             this.cellToolColor.Name = "cellToolColor";
-            this.cellToolColor.Size = new System.Drawing.Size(170, 22);
+            this.cellToolColor.Size = new System.Drawing.Size(180, 22);
             this.cellToolColor.Text = "Cell Color";
             // 
             // cellColorRed
             // 
             this.cellColorRed.Name = "cellColorRed";
-            this.cellColorRed.Size = new System.Drawing.Size(129, 22);
+            this.cellColorRed.Size = new System.Drawing.Size(180, 22);
             this.cellColorRed.Text = "Red";
             this.cellColorRed.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorBlue
             // 
             this.cellColorBlue.Name = "cellColorBlue";
-            this.cellColorBlue.Size = new System.Drawing.Size(129, 22);
+            this.cellColorBlue.Size = new System.Drawing.Size(180, 22);
             this.cellColorBlue.Text = "Blue";
+            this.cellColorBlue.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorYellow
             // 
             this.cellColorYellow.Name = "cellColorYellow";
-            this.cellColorYellow.Size = new System.Drawing.Size(129, 22);
+            this.cellColorYellow.Size = new System.Drawing.Size(180, 22);
             this.cellColorYellow.Text = "Yellow";
+            this.cellColorYellow.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorBrown
             // 
             this.cellColorBrown.Name = "cellColorBrown";
-            this.cellColorBrown.Size = new System.Drawing.Size(129, 22);
+            this.cellColorBrown.Size = new System.Drawing.Size(180, 22);
             this.cellColorBrown.Text = "Brown";
+            this.cellColorBrown.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorAqua
             // 
             this.cellColorAqua.Name = "cellColorAqua";
-            this.cellColorAqua.Size = new System.Drawing.Size(129, 22);
+            this.cellColorAqua.Size = new System.Drawing.Size(180, 22);
             this.cellColorAqua.Text = "Aqua";
+            this.cellColorAqua.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorHotPink
             // 
             this.cellColorHotPink.Name = "cellColorHotPink";
-            this.cellColorHotPink.Size = new System.Drawing.Size(129, 22);
+            this.cellColorHotPink.Size = new System.Drawing.Size(180, 22);
             this.cellColorHotPink.Text = "HotPink";
+            this.cellColorHotPink.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorDarkGreen
             // 
             this.cellColorDarkGreen.Name = "cellColorDarkGreen";
-            this.cellColorDarkGreen.Size = new System.Drawing.Size(129, 22);
+            this.cellColorDarkGreen.Size = new System.Drawing.Size(180, 22);
             this.cellColorDarkGreen.Text = "DarkGreen";
+            this.cellColorDarkGreen.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorRandom
             // 
             this.cellColorRandom.Name = "cellColorRandom";
-            this.cellColorRandom.Size = new System.Drawing.Size(129, 22);
+            this.cellColorRandom.Size = new System.Drawing.Size(180, 22);
             this.cellColorRandom.Text = "Random";
             this.cellColorRandom.Click += new System.EventHandler(this.changeColor);
             // 
             // startBtnClick
             // 
             this.startBtnClick.Name = "startBtnClick";
-            this.startBtnClick.Size = new System.Drawing.Size(127, 22);
+            this.startBtnClick.Size = new System.Drawing.Size(180, 22);
             this.startBtnClick.Text = "&Start";
             this.startBtnClick.Click += new System.EventHandler(this.startTool_Click);
             // 
