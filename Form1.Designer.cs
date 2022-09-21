@@ -67,6 +67,7 @@ namespace GameOfLife
             this.cellColorDarkGreen = new System.Windows.Forms.ToolStripMenuItem();
             this.cellColorRandom = new System.Windows.Forms.ToolStripMenuItem();
             this.startBtnClick = new System.Windows.Forms.ToolStripMenuItem();
+            this.nodeDelay = new System.Windows.Forms.NumericUpDown();
             this.fdSave = new System.Windows.Forms.SaveFileDialog();
             this.colorBtn = new System.Windows.Forms.Button();
             this.nxtBtn = new System.Windows.Forms.Button();
@@ -74,10 +75,11 @@ namespace GameOfLife
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.warBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cellSize)).BeginInit();
             this.mMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nodeDelay)).BeginInit();
             this.SuspendLayout();
             // 
             // picGrid
@@ -85,9 +87,10 @@ namespace GameOfLife
             this.picGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.picGrid.Location = new System.Drawing.Point(16, 36);
+            this.picGrid.Location = new System.Drawing.Point(32, 69);
+            this.picGrid.Margin = new System.Windows.Forms.Padding(6);
             this.picGrid.Name = "picGrid";
-            this.picGrid.Size = new System.Drawing.Size(783, 390);
+            this.picGrid.Size = new System.Drawing.Size(1566, 750);
             this.picGrid.TabIndex = 0;
             this.picGrid.TabStop = false;
             this.picGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.grid_mouseClick);
@@ -95,7 +98,8 @@ namespace GameOfLife
             // cellSize
             // 
             this.cellSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cellSize.Location = new System.Drawing.Point(72, 435);
+            this.cellSize.Location = new System.Drawing.Point(144, 837);
+            this.cellSize.Margin = new System.Windows.Forms.Padding(6);
             this.cellSize.Maximum = new decimal(new int[] {
             20,
             0,
@@ -107,7 +111,7 @@ namespace GameOfLife
             0,
             0});
             this.cellSize.Name = "cellSize";
-            this.cellSize.Size = new System.Drawing.Size(48, 20);
+            this.cellSize.Size = new System.Drawing.Size(96, 31);
             this.cellSize.TabIndex = 1;
             this.cellSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cellSize.Value = new decimal(new int[] {
@@ -120,18 +124,20 @@ namespace GameOfLife
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 437);
+            this.label1.Location = new System.Drawing.Point(24, 840);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(103, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cell Size:";
             // 
             // resetBtn
             // 
             this.resetBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.resetBtn.Location = new System.Drawing.Point(142, 433);
+            this.resetBtn.Location = new System.Drawing.Point(284, 833);
+            this.resetBtn.Margin = new System.Windows.Forms.Padding(6);
             this.resetBtn.Name = "resetBtn";
-            this.resetBtn.Size = new System.Drawing.Size(64, 20);
+            this.resetBtn.Size = new System.Drawing.Size(128, 38);
             this.resetBtn.TabIndex = 3;
             this.resetBtn.Text = "Reset";
             this.resetBtn.UseVisualStyleBackColor = true;
@@ -140,9 +146,10 @@ namespace GameOfLife
             // startBtn
             // 
             this.startBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.startBtn.Location = new System.Drawing.Point(733, 441);
+            this.startBtn.Location = new System.Drawing.Point(1466, 848);
+            this.startBtn.Margin = new System.Windows.Forms.Padding(6);
             this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(64, 20);
+            this.startBtn.Size = new System.Drawing.Size(128, 38);
             this.startBtn.TabIndex = 5;
             this.startBtn.Text = "Start";
             this.startBtn.UseVisualStyleBackColor = true;
@@ -151,9 +158,10 @@ namespace GameOfLife
             // clearBtn
             // 
             this.clearBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.clearBtn.Location = new System.Drawing.Point(221, 433);
+            this.clearBtn.Location = new System.Drawing.Point(442, 833);
+            this.clearBtn.Margin = new System.Windows.Forms.Padding(6);
             this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(64, 20);
+            this.clearBtn.Size = new System.Drawing.Size(128, 38);
             this.clearBtn.TabIndex = 6;
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = true;
@@ -161,13 +169,14 @@ namespace GameOfLife
             // 
             // mMain
             // 
+            this.mMain.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.mMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileClick,
             this.gameClick});
             this.mMain.Location = new System.Drawing.Point(0, 0);
             this.mMain.Name = "mMain";
-            this.mMain.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.mMain.Size = new System.Drawing.Size(809, 24);
+            this.mMain.Padding = new System.Windows.Forms.Padding(10, 4, 0, 4);
+            this.mMain.Size = new System.Drawing.Size(1618, 44);
             this.mMain.TabIndex = 7;
             this.mMain.Text = "menuStrip1";
             // 
@@ -179,32 +188,32 @@ namespace GameOfLife
             this.toolStripSeparator3,
             this.exitClick});
             this.fileClick.Name = "fileClick";
-            this.fileClick.Size = new System.Drawing.Size(37, 20);
+            this.fileClick.Size = new System.Drawing.Size(72, 36);
             this.fileClick.Text = "&File";
             // 
             // loadPatterClick
             // 
             this.loadPatterClick.Name = "loadPatterClick";
-            this.loadPatterClick.Size = new System.Drawing.Size(141, 22);
+            this.loadPatterClick.Size = new System.Drawing.Size(282, 44);
             this.loadPatterClick.Text = "&Load Pattern";
             this.loadPatterClick.Click += new System.EventHandler(this.loadPattern_Click);
             // 
             // savePatternClick
             // 
             this.savePatternClick.Name = "savePatternClick";
-            this.savePatternClick.Size = new System.Drawing.Size(141, 22);
+            this.savePatternClick.Size = new System.Drawing.Size(282, 44);
             this.savePatternClick.Text = "&Save Pattern";
             this.savePatternClick.Click += new System.EventHandler(this.savePattern_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(138, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(279, 6);
             // 
             // exitClick
             // 
             this.exitClick.Name = "exitClick";
-            this.exitClick.Size = new System.Drawing.Size(141, 22);
+            this.exitClick.Size = new System.Drawing.Size(282, 44);
             this.exitClick.Text = "E&xit";
             this.exitClick.Click += new System.EventHandler(this.exitTool_Click);
             // 
@@ -218,32 +227,32 @@ namespace GameOfLife
             this.colorToolStripMenuItem,
             this.startBtnClick});
             this.gameClick.Name = "gameClick";
-            this.gameClick.Size = new System.Drawing.Size(50, 20);
+            this.gameClick.Size = new System.Drawing.Size(97, 36);
             this.gameClick.Text = "&Game";
             // 
             // resetGridClick
             // 
             this.resetGridClick.Name = "resetGridClick";
-            this.resetGridClick.Size = new System.Drawing.Size(180, 22);
+            this.resetGridClick.Size = new System.Drawing.Size(257, 44);
             this.resetGridClick.Text = "&Reset Grid";
             this.resetGridClick.Click += new System.EventHandler(this.resetGrid_tool);
             // 
             // clearGridClick
             // 
             this.clearGridClick.Name = "clearGridClick";
-            this.clearGridClick.Size = new System.Drawing.Size(180, 22);
+            this.clearGridClick.Size = new System.Drawing.Size(257, 44);
             this.clearGridClick.Text = "&Clear Grid";
             this.clearGridClick.Click += new System.EventHandler(this.clearGrid_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(254, 6);
             // 
             // advanceToolStripMenuItem
             // 
             this.advanceToolStripMenuItem.Name = "advanceToolStripMenuItem";
-            this.advanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.advanceToolStripMenuItem.Size = new System.Drawing.Size(257, 44);
             // 
             // colorToolStripMenuItem
             // 
@@ -251,7 +260,7 @@ namespace GameOfLife
             this.backgroundToolColor,
             this.cellToolColor});
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(257, 44);
             this.colorToolStripMenuItem.Text = "Color";
             // 
             // backgroundToolColor
@@ -266,55 +275,55 @@ namespace GameOfLife
             this.bckgrndDarkGreen,
             this.bckgrndRandom});
             this.backgroundToolColor.Name = "backgroundToolColor";
-            this.backgroundToolColor.Size = new System.Drawing.Size(180, 22);
+            this.backgroundToolColor.Size = new System.Drawing.Size(340, 44);
             this.backgroundToolColor.Text = "Background Color";
             // 
             // bckgrndRed
             // 
             this.bckgrndRed.Name = "bckgrndRed";
-            this.bckgrndRed.Size = new System.Drawing.Size(180, 22);
+            this.bckgrndRed.Size = new System.Drawing.Size(262, 44);
             this.bckgrndRed.Text = "Red";
             // 
             // bckgrndBlue
             // 
             this.bckgrndBlue.Name = "bckgrndBlue";
-            this.bckgrndBlue.Size = new System.Drawing.Size(180, 22);
+            this.bckgrndBlue.Size = new System.Drawing.Size(262, 44);
             this.bckgrndBlue.Text = "Blue";
             // 
             // bckgrndYellow
             // 
             this.bckgrndYellow.Name = "bckgrndYellow";
-            this.bckgrndYellow.Size = new System.Drawing.Size(180, 22);
+            this.bckgrndYellow.Size = new System.Drawing.Size(262, 44);
             this.bckgrndYellow.Text = "Yellow";
             // 
             // bckgrndBrown
             // 
             this.bckgrndBrown.Name = "bckgrndBrown";
-            this.bckgrndBrown.Size = new System.Drawing.Size(180, 22);
+            this.bckgrndBrown.Size = new System.Drawing.Size(262, 44);
             this.bckgrndBrown.Text = "Brown";
             // 
             // bckgrndAqua
             // 
             this.bckgrndAqua.Name = "bckgrndAqua";
-            this.bckgrndAqua.Size = new System.Drawing.Size(180, 22);
+            this.bckgrndAqua.Size = new System.Drawing.Size(262, 44);
             this.bckgrndAqua.Text = "Aqua";
             // 
             // bckgrndHotPink
             // 
             this.bckgrndHotPink.Name = "bckgrndHotPink";
-            this.bckgrndHotPink.Size = new System.Drawing.Size(180, 22);
+            this.bckgrndHotPink.Size = new System.Drawing.Size(262, 44);
             this.bckgrndHotPink.Text = "HotPink";
             // 
             // bckgrndDarkGreen
             // 
             this.bckgrndDarkGreen.Name = "bckgrndDarkGreen";
-            this.bckgrndDarkGreen.Size = new System.Drawing.Size(180, 22);
+            this.bckgrndDarkGreen.Size = new System.Drawing.Size(262, 44);
             this.bckgrndDarkGreen.Text = "DarkGreen";
             // 
             // bckgrndRandom
             // 
             this.bckgrndRandom.Name = "bckgrndRandom";
-            this.bckgrndRandom.Size = new System.Drawing.Size(180, 22);
+            this.bckgrndRandom.Size = new System.Drawing.Size(262, 44);
             this.bckgrndRandom.Text = "Random";
             // 
             // cellToolColor
@@ -329,78 +338,93 @@ namespace GameOfLife
             this.cellColorDarkGreen,
             this.cellColorRandom});
             this.cellToolColor.Name = "cellToolColor";
-            this.cellToolColor.Size = new System.Drawing.Size(180, 22);
+            this.cellToolColor.Size = new System.Drawing.Size(340, 44);
             this.cellToolColor.Text = "Cell Color";
             // 
             // cellColorRed
             // 
             this.cellColorRed.Name = "cellColorRed";
-            this.cellColorRed.Size = new System.Drawing.Size(180, 22);
+            this.cellColorRed.Size = new System.Drawing.Size(262, 44);
             this.cellColorRed.Text = "Red";
             this.cellColorRed.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorBlue
             // 
             this.cellColorBlue.Name = "cellColorBlue";
-            this.cellColorBlue.Size = new System.Drawing.Size(180, 22);
+            this.cellColorBlue.Size = new System.Drawing.Size(262, 44);
             this.cellColorBlue.Text = "Blue";
             this.cellColorBlue.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorYellow
             // 
             this.cellColorYellow.Name = "cellColorYellow";
-            this.cellColorYellow.Size = new System.Drawing.Size(180, 22);
+            this.cellColorYellow.Size = new System.Drawing.Size(262, 44);
             this.cellColorYellow.Text = "Yellow";
             this.cellColorYellow.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorBrown
             // 
             this.cellColorBrown.Name = "cellColorBrown";
-            this.cellColorBrown.Size = new System.Drawing.Size(180, 22);
+            this.cellColorBrown.Size = new System.Drawing.Size(262, 44);
             this.cellColorBrown.Text = "Brown";
             this.cellColorBrown.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorAqua
             // 
             this.cellColorAqua.Name = "cellColorAqua";
-            this.cellColorAqua.Size = new System.Drawing.Size(180, 22);
+            this.cellColorAqua.Size = new System.Drawing.Size(262, 44);
             this.cellColorAqua.Text = "Aqua";
             this.cellColorAqua.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorHotPink
             // 
             this.cellColorHotPink.Name = "cellColorHotPink";
-            this.cellColorHotPink.Size = new System.Drawing.Size(180, 22);
+            this.cellColorHotPink.Size = new System.Drawing.Size(262, 44);
             this.cellColorHotPink.Text = "HotPink";
             this.cellColorHotPink.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorDarkGreen
             // 
             this.cellColorDarkGreen.Name = "cellColorDarkGreen";
-            this.cellColorDarkGreen.Size = new System.Drawing.Size(180, 22);
+            this.cellColorDarkGreen.Size = new System.Drawing.Size(262, 44);
             this.cellColorDarkGreen.Text = "DarkGreen";
             this.cellColorDarkGreen.Click += new System.EventHandler(this.menuColor);
             // 
             // cellColorRandom
             // 
             this.cellColorRandom.Name = "cellColorRandom";
-            this.cellColorRandom.Size = new System.Drawing.Size(180, 22);
+            this.cellColorRandom.Size = new System.Drawing.Size(262, 44);
             this.cellColorRandom.Text = "Random";
             this.cellColorRandom.Click += new System.EventHandler(this.changeColor);
             // 
             // startBtnClick
             // 
             this.startBtnClick.Name = "startBtnClick";
-            this.startBtnClick.Size = new System.Drawing.Size(180, 22);
+            this.startBtnClick.Size = new System.Drawing.Size(257, 44);
             this.startBtnClick.Text = "&Start";
             this.startBtnClick.Click += new System.EventHandler(this.startTool_Click);
+            // 
+            // nodeDelay
+            // 
+            this.nodeDelay.Location = new System.Drawing.Point(1466, 898);
+            this.nodeDelay.Margin = new System.Windows.Forms.Padding(6);
+            this.nodeDelay.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.nodeDelay.Name = "nodeDelay";
+            this.nodeDelay.Size = new System.Drawing.Size(126, 31);
+            this.nodeDelay.TabIndex = 8;
+            this.nodeDelay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // colorBtn
             // 
             this.colorBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.colorBtn.Location = new System.Drawing.Point(221, 459);
+            this.colorBtn.Location = new System.Drawing.Point(442, 883);
+            this.colorBtn.Margin = new System.Windows.Forms.Padding(6);
             this.colorBtn.Name = "colorBtn";
-            this.colorBtn.Size = new System.Drawing.Size(64, 20);
+            this.colorBtn.Size = new System.Drawing.Size(128, 38);
             this.colorBtn.TabIndex = 8;
             this.colorBtn.Text = "Color";
             this.colorBtn.UseVisualStyleBackColor = true;
@@ -409,9 +433,10 @@ namespace GameOfLife
             // nxtBtn
             // 
             this.nxtBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nxtBtn.Location = new System.Drawing.Point(663, 441);
+            this.nxtBtn.Location = new System.Drawing.Point(1326, 848);
+            this.nxtBtn.Margin = new System.Windows.Forms.Padding(6);
             this.nxtBtn.Name = "nxtBtn";
-            this.nxtBtn.Size = new System.Drawing.Size(64, 20);
+            this.nxtBtn.Size = new System.Drawing.Size(128, 38);
             this.nxtBtn.TabIndex = 10;
             this.nxtBtn.Text = "Next";
             this.nxtBtn.UseVisualStyleBackColor = true;
@@ -420,58 +445,62 @@ namespace GameOfLife
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 463);
+            this.label2.Location = new System.Drawing.Point(26, 890);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(108, 25);
             this.label2.TabIndex = 11;
             this.label2.Text = "Alive Cell:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(76, 463);
+            this.label3.Location = new System.Drawing.Point(152, 890);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(0, 25);
             this.label3.TabIndex = 12;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 483);
+            this.label4.Location = new System.Drawing.Point(26, 929);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.Size = new System.Drawing.Size(124, 25);
             this.label4.TabIndex = 13;
             this.label4.Text = "Generation:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(83, 483);
+            this.label5.Location = new System.Drawing.Point(166, 929);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.Size = new System.Drawing.Size(0, 25);
             this.label5.TabIndex = 14;
             // 
-            // warBtn
+            // label6
             // 
-            this.warBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.warBtn.Location = new System.Drawing.Point(142, 456);
-            this.warBtn.Name = "warBtn";
-            this.warBtn.Size = new System.Drawing.Size(64, 20);
-            this.warBtn.TabIndex = 15;
-            this.warBtn.Text = "War";
-            this.warBtn.UseVisualStyleBackColor = true;
-            this.warBtn.Click += new System.EventHandler(this.War);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1321, 900);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 25);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Delay(ms):";
             // 
             // TonioLife
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 504);
-            this.Controls.Add(this.warBtn);
+            this.ClientSize = new System.Drawing.Size(1618, 969);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.nodeDelay);
             this.Controls.Add(this.nxtBtn);
             this.Controls.Add(this.colorBtn);
             this.Controls.Add(this.clearBtn);
@@ -482,7 +511,8 @@ namespace GameOfLife
             this.Controls.Add(this.picGrid);
             this.Controls.Add(this.mMain);
             this.MainMenuStrip = this.mMain;
-            this.MinimumSize = new System.Drawing.Size(825, 543);
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.MinimumSize = new System.Drawing.Size(1624, 979);
             this.Name = "TonioLife";
             this.Text = "Tonio\'s Game Of Life";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.tonio_Closing);
@@ -491,6 +521,7 @@ namespace GameOfLife
             ((System.ComponentModel.ISupportInitialize)(this.cellSize)).EndInit();
             this.mMain.ResumeLayout(false);
             this.mMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nodeDelay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,6 +548,7 @@ namespace GameOfLife
         private System.Windows.Forms.ToolStripMenuItem savePatternClick;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem exitClick;
+        private System.Windows.Forms.NumericUpDown nodeDelay;
         private System.Windows.Forms.Button colorBtn;
         private System.Windows.Forms.Button nxtBtn;
         private System.Windows.Forms.Label label2;
@@ -542,7 +574,7 @@ namespace GameOfLife
         private System.Windows.Forms.ToolStripMenuItem bckgrndHotPink;
         private System.Windows.Forms.ToolStripMenuItem bckgrndDarkGreen;
         private System.Windows.Forms.ToolStripMenuItem bckgrndRandom;
-        private System.Windows.Forms.Button warBtn;
+        private System.Windows.Forms.Label label6;
     }
 }
 

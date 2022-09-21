@@ -17,6 +17,7 @@ namespace GameOfLife
         private Grid CellGrid;
         private Color cellColor = Color.Aqua;
         private int currentGen = 0;
+        bool ViewNeighbors = false;
 
         public TonioLife()
         {
@@ -87,7 +88,8 @@ namespace GameOfLife
         {
             createGrid(true);
             resetGen();
-        }
+        } 
+
 
         private void getNextUpdate()
         {
@@ -196,15 +198,21 @@ namespace GameOfLife
             using (Bitmap bmp = new Bitmap(picGrid.Width, picGrid.Height))
             using (Graphics g = Graphics.FromImage(bmp))
             using (SolidBrush cellBrush = new SolidBrush(cellColor))
+            using (SolidBrush warBrush = new SolidBrush(Color.Red))
             {
                 g.Clear(Color.Black);
 
                 foreach (Cell cell in Grid.gridCells)
                 {
-                    if (cell.IsAlive)
+                    if (cell.IsAlive && cell.War == 0)
                     {
                         g.FillRectangle(cellBrush, cell.CellDisplay);
                     }
+                    else if(cell.War == 1)
+                    {
+                        g.FillRectangle(warBrush, cell.CellDisplay);
+                    }
+                    
                 }
 
                 if (picGrid.Image != null)
@@ -213,6 +221,7 @@ namespace GameOfLife
                 picGrid.Image = (Bitmap)bmp.Clone();
             }
         }
+
         private void btnNext_Click(object sender, EventArgs e)
         {
             getNextUpdate();
@@ -234,6 +243,11 @@ namespace GameOfLife
             {
                 getNextUpdate();
                 Application.DoEvents();
+
+                if (nodeDelay.Value > 0)
+                {
+                    Thread.Sleep((int)nodeDelay.Value);
+                }
             }
         }
 
@@ -337,14 +351,5 @@ namespace GameOfLife
 
         }
 
-
-        public void War(object sender, EventArgs e)
-        {
-            // thoughts?
-            // different sections of cells have different colors
-            // when 2 oppisite section of cells beomce neighbors
-            // the cell with the most neighbors will keep color, the remaining will change to the color of the cell with the most neighbors
-            
-        }    
     }
 }

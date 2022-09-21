@@ -12,12 +12,14 @@ namespace GameOfLife
         private int cYPos;
         private Boolean cIsAlive;
         private Boolean cNext;
+        private int war = 0;
 
         public Cell(int CellSize)
         {
             Grid.gridCells.Add(this);
             this.CellSize = new Size(CellSize, CellSize);
         }
+
         public Cell(Point location, int X, int Y)
         {
             int cellSize;
@@ -81,6 +83,12 @@ namespace GameOfLife
         {
             get { return cNext; }
             set { cNext = value; }
+        }
+
+        public int War
+        {
+            get { return war; }
+            set { war = value;  }
         }
 
         public override string ToString()
